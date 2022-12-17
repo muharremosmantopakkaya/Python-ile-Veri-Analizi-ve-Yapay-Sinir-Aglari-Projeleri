@@ -1,0 +1,102 @@
+import csv
+import matplotlib.pyplot as plt
+
+# verilerin yüklenmesi
+with open('urunler.csv') as csvfile:
+    reader = csv.DictReader(csvfile)
+    data = [row for row in reader]
+
+# verilerin fiyat aralıklarına göre gruplanması
+groups = {
+    '3-4 TL': [],
+    '5-6 TL': [],
+    '7 TL ve Üzeri': []
+}
+
+# verilerin gruplanması
+for item in data:
+    if 3 <= int(item['fiyat']) < 4:
+        groups['3-4 TL'].append(item)
+    elif 4 <= int(item['fiyat']) < 7:
+        groups['5-6 TL'].append(item)
+    else:
+        groups['7 TL ve Üzeri'].append(item)
+
+# x ve y değerlerinin oluşturulması
+x = list(groups.keys())
+y = [len(group) for group in groups.values()]
+
+# grafiğin oluşturulması
+plt.plot(x, y)
+
+# x ekseninin etiketlenmesi
+plt.xlabel("Fiyat Aralıkları")
+
+# y ekseninin etiket
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

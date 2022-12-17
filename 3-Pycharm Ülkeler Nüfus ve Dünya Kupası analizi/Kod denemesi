@@ -1,0 +1,45 @@
+import csv
+from sklearn.model_selection import train_test_split
+from sklearn.neural_network import MLPClassifier
+
+# CSV dosyasından verilerin okunması
+X = []
+y = []
+with open('countries_populations.csv') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        X.append(int(row["population"]))
+        y.append(row["country"])
+
+# Verilerinizi eğitim ve test kümeleri olarak ayırın
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+
+# Modelinizi oluşturun
+mlp = MLPClassifier()
+
+# Veri kümenizi büyütün
+X_augmented = []
+y_augmented = []
+for i, (x, y) in enumerate(zip(X, y)):
+    # Veri noktalarınızı tekrarlayın
+    X_augmented.append([x])
+    y_augmented.append([y])
+
+    # Veri noktalarınızı ters çevirin
+    X_augmented.append([-x])
+    y_augmented.append([y])
+
+
+# Sınıf etiketlerini bir set içinde saklayın
+unique_labels = []
+for y in y_augmented:
+    unique_labels.extend(y)
+unique_labels = list(set(unique_labels))
+
+
+# Modelinizi eğitin
+mlp.fit(X_augmented, y_augmented)
+
+# Modelinizin performansını değerlendirin
+accuracy = mlp.score(X_test, y_test)
+print(f"Accuracy: {accuracy:.2f}")

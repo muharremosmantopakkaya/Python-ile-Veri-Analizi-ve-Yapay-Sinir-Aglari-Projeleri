@@ -1,0 +1,33 @@
+name,price,type,quantity
+Meyve Suyu,20,Meyve Suyu,100
+Kola,25,İçecek,50
+Bira,80,İçecek,25
+Yoğurt,40,Meyve Suyu,150
+Su,25,İçecek,50
+Bira,80,İçecek,25
+Yoğurt,40,Meyve Suyu,150
+Süt,25,Süt Ürünleri,50
+Kaşar Peyniri,40,Peynir,150
+Ekmek,15,Gıda,50
+Makarna,15,Gıda,25
+Tavuk,35,Et Ürünleri,150
+Köfte,25,Et Ürünleri,50
+Kıyma,20,Et Ürünleri,25
+Kümes Hayvanları,45,Et Ürünleri,150
+Balık,60,Et Ürünleri,50
+Domates,5,Sebze,25
+Biber,5,Sebze,150
+Patlıcan,8,Sebze,50
+Marul,5,Sebze,25
+Turp,10,Sebze,150
+Karnıbahar,15,Sebze,50
+Beyaz Pancar,15,Sebze,25
+Mısır,10,Tahıl Ürünleri,150
+Buğday,15,Tahıl Ürünleri,50
+Tavuk,27,Yemek,10
+Makarna,28,Yemek,15
+Pizza,29,Yemek,5
+
+
+
+
